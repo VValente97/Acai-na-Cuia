@@ -1,0 +1,26 @@
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+.openai/
+.sites-runtime/
+.codex/
+
+# Dependências, logs e arquivos temporários
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+*.tmp
+*.temp
+
+# Pacotes e artefatos de publicação
+*.tar
+*.tar.gz
+dist/*.zip
+
+# Arquivos de sistema e editor
+.DS_Store
+Thumbs.db
+.vscode/settings.json
