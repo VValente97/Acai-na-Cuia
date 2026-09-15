@@ -51,6 +51,14 @@
     .photo-grid { display:grid; grid-template-columns:1.35fr 1fr; grid-template-rows:150px 150px; gap:12px; margin-top:28px; }
     .photo-slot { display:grid; place-items:center; min-height:120px; padding:18px; border:1.5px dashed rgba(92,28,114,.42); border-radius:24px; color:var(--berry); background:rgba(247,231,239,.72); text-align:center; font-size:14px; font-weight:900; }
     .photo-slot:first-child { grid-row:1 / 3; }
+    .store { display:grid; gap:24px; background:#f7e7ef; }
+    .store-photo { overflow:hidden; border-radius:28px; background:var(--purple); box-shadow:0 18px 34px rgba(50,17,63,.2); }
+    .store-photo img { display:block; width:100%; aspect-ratio:1.15; object-fit:cover; }
+    .store-caption { padding:13px 16px; color:#fff; font-size:13px; }
+    .store-info { padding:22px; border-radius:24px; color:#fff; background:var(--purple); }
+    .store-info .section-kicker { color:var(--green); }
+    .store-info .section-lead { color:#eddcee; }
+    .store-info .address { margin-bottom:18px; }
     .location { color:#fff; background:var(--purple); }
     .location .section-kicker { color:var(--green); }
     .location .section-lead { color:#eddcee; }
@@ -70,7 +78,7 @@
     <section class="hero" id="inicio">
       <div class="hero-orb" aria-hidden="true"></div>
       <div class="eyebrow"><i></i> Açaí na Cuia</div>
-      <h1>Seu açaí na melhor qualidade.<br><em>Sua cuia.</em></h1>
+      <h1>Seu açaí na melhor qualidade.</h1>
       <p class="hero-copy">Açaí confiável, tradicional e preparado com o sabor que atravessa gerações.</p>
       <div class="cta-row"><a class="btn btn-primary" href="#cardapio">Conhecer o menu</a><a class="btn btn-ghost" href="#localizacao">Encontrar a loja</a></div>
       <div class="scroll-cue">deslize <span></span></div>
@@ -86,6 +94,10 @@
     <section class="photos" id="produtos">
       <div class="reveal"><div class="section-kicker">Produtos reais</div><h2>Em breve, na sua tela.</h2><p class="section-lead">Este espaço está reservado para as fotos reais dos produtos da loja.</p></div>
       <div class="photo-grid reveal"><div class="photo-slot">Adicionar foto principal do açaí</div><div class="photo-slot">Adicionar foto das farinhas</div><div class="photo-slot">Adicionar outra foto</div></div>
+    </section>
+    <section class="store" id="loja">
+      <div class="store-photo reveal"><img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmYqnt3Nq3Dvurg7WL9Kjsmhf7l4JeqX4hmcMKIYukLiU8LSeh2Zybty-AelEWlL8_PSovD_IwOFRa9-u7IdaG0O01PVMFNArKkAXan9hDubKKuhITYBY9Q6zt08TAJUsKTwfdlHo2nns75=w900-h900-k-no" alt="Foto pública da Açaí na Cuia no Google Maps" /><div class="store-caption">Foto pública do perfil da loja no Google Maps</div></div>
+      <div class="store-info reveal"><div class="section-kicker">Nossa loja</div><h2>Uma loja de esquina com sabor de tradição.</h2><p class="section-lead">Conheça o espaço, veja mais fotos e encontre a Açaí na Cuia em Cametá.</p><div class="address">📍 R. Adilson Machado, 2482<br>Cametá, PA · 68400-000</div><a class="btn btn-primary" href="https://maps.app.goo.gl/9LPhk8yuM2tqJ5Af7" target="_blank" rel="noopener">Ver a loja no Google Maps</a></div>
     </section>
     <section class="location" id="localizacao"><div class="reveal"><div class="section-kicker">Visite a loja</div><h2>Chegue na Cuia.</h2><p class="section-lead">Estamos esperando você em Cametá. Salve o endereço e peça sua rota.</p><div class="address">📍 R. Adilson Machado, 2482<br>Cametá, PA · 68400-000</div><a class="btn btn-primary" href="https://maps.app.goo.gl/9LPhk8yuM2tqJ5Af7" target="_blank" rel="noopener">Abrir no Google Maps</a></div></section>
   </main>
