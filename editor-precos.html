@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Editar cardápio | Açaí na Cuia</title>
+  <style>
+    :root { font-family:system-ui,sans-serif; color:#32113f; background:#fff7e9; }
+    body { max-width:720px; margin:0 auto; padding:24px; }
+    h1 { margin-bottom:8px; }
+    p { line-height:1.5; }
+    fieldset { margin:20px 0; padding:18px; border:1px solid #cbaed2; border-radius:16px; }
+    legend { padding:0 8px; font-weight:700; }
+    label { display:grid; grid-template-columns:1fr minmax(140px,190px); align-items:center; gap:12px; margin:12px 0; font-weight:600; }
+    input { width:100%; padding:12px; border:1px solid #9a7ca3; border-radius:8px; font:inherit; }
+    button { padding:13px 20px; border:0; border-radius:10px; background:#32113f; color:white; font:inherit; font-weight:700; cursor:pointer; }
+    #status { min-height:1.5em; font-weight:700; }
+    @media (max-width:500px) { label { grid-template-columns:1fr; gap:5px; } }
+  </style>
+</head>
+<body>
+  <h1>Editar cardápio</h1>
+  <p>Preencha os preços em reais. Deixe um campo vazio para mostrar “Consulte o preço”. Esta página funciona apenas no servidor local; salve as alterações antes de publicar a pasta <code>dist</code>.</p>
+  <form id="editor">
+    <fieldset><legend>Pedidos</legend><label>WhatsApp com DDD<input id="whatsapp" type="tel" inputmode="tel" placeholder="(91) 99999-9999" autocomplete="tel" /></label><small>Digite um número brasileiro; o código 55 será adicionado automaticamente.</small></fieldset>
+    <fieldset><legend>Açaí</legend>
+      <label>Açaí popular <input data-price="acai-popular" inputmode="decimal" placeholder="Ex.: 12,50" /></label>
+      <label>Açaí médio <input data-price="acai-medio" inputmode="decimal" placeholder="Ex.: 12,50" /></label>
+      <label>Açaí grosso <input data-price="acai-grosso" inputmode="decimal" placeholder="Ex.: 12,50" /></label>
+    </fieldset>
+    <fieldset><legend>Farinhas</legend>
+      <label>Farinha d’água <input data-price="farinha-agua" inputmode="decimal" placeholder="Ex.: 12,50" /></label>
+      <label>Farinha de tapioca <input data-price="farinha-tapioca" inputmode="decimal" placeholder="Ex.: 12,50" /></label>
+      <label>Farinha para farofa <input data-price="farinha-farofa" inputmode="decimal" placeholder="Ex.: 12,50" /></label>
+    </fieldset>
+    <button type="submit">Salvar alterações</button>
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+  <p><a href="/">Ver o site</a></p>
+  <script>
+    const status = document.querySelector('#status');
+    fetch('/cardapio.json', { cache: 'no-store' }).then((response) => response.json()).then((data) => {
+      document.querySelector('#whatsapp').value = data.whatsapp ? data.whatsapp.replace(/^55/, '') : '';
+      document.querySelectorAll('[data-price]').forEach((input) => {
+        const cents = data.precos[input.dataset.price];
+        input.value = cents === null ? '' : (cents / 100).toFixed(2).replace('.', ',');
+      });
+    }).catch(() => { status.textContent = 'Não foi possível carregar o cardápio.'; });
+    document.querySelector('#editor').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.textContent = '';
+      const number = document.querySelector('#whatsapp').value.replace(/\D/g, '');
+      const whatsapp = number ? (number.startsWith('55') && number.length > 11 ? number : `55${number}`) : '';
+      if (whatsapp && !/^55\d{10,11}$/.test(whatsapp)) { status.textContent = 'Confira o número do WhatsApp com DDD.'; return; }
+      const precos = {};
+      for (const input of document.querySelectorAll('[data-price]')) {
+        const value = input.value.trim().replace(',', '.');
+        if (value && !/^\d+(?:\.\d{1,2})?$/.test(value)) { status.textContent = `Confira o preço de ${input.parentElement.textContent.trim()}.`; input.focus(); return; }
+        precos[input.dataset.price] = value ? Math.round(Number(value) * 100) : null;
+      }
+      try {
+        const response = await fetch('/api/cardapio', { method:'PUT', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify({ whatsapp, precos }) });
+        if (!response.ok) throw new Error((await response.json()).erro);
+        status.textContent = 'Cardápio salvo. Atualize o site para ver as mudanças.';
+      } catch (error) { status.textContent = `Não foi possível salvar: ${error.message}`; }
+    });
+  </script>
+</body>
+</html>

@@ -46,6 +46,8 @@
     h2 { margin:9px 0 12px; font-size:clamp(32px, 10vw, 56px); line-height:.98; letter-spacing:-.06em; }
     .section-lead { margin:0; color:var(--muted); font-size:17px; line-height:1.5; }
     .menu-section { background:#f7e7ef; }
+    .menu-art { display:block; width:min(100%, 560px); height:auto; margin:28px auto 0; border-radius:20px; box-shadow:0 18px 36px rgba(50,17,63,.2); }
+    .menu-caption { margin:10px 0 0; color:var(--muted); font-size:13px; text-align:center; }
     .menu-grid { display:grid; gap:14px; margin-top:28px; }
     .menu-card { position:relative; overflow:hidden; padding:21px; min-height:145px; border-radius:24px; color:#fff; background:linear-gradient(140deg, var(--berry), var(--purple)); box-shadow:0 14px 24px rgba(50,17,63,.15); }
     .menu-card:after { content:""; position:absolute; width:130px; height:130px; right:-40px; bottom:-55px; border:18px solid rgba(155,197,61,.22); border-radius:50%; }
@@ -53,17 +55,24 @@
     .menu-card h3 { margin:0 0 12px; color:var(--green); font-size:23px; letter-spacing:-.04em; }
     .menu-item { width:100%; display:flex; justify-content:space-between; gap:12px; padding:13px 0; border:0; border-top:1px solid rgba(255,255,255,.2); color:#fff; background:transparent; font:inherit; font-size:16px; font-weight:800; text-align:left; cursor:pointer; transition:transform 160ms var(--ease-out), color 160ms ease; }
     .menu-item:active { transform:scale(.98); }
-    .menu-item.is-selected { color:var(--green); }
     .menu-item:focus-visible { color:var(--green); outline:2px solid var(--green); outline-offset:4px; }
     @media (hover:hover) and (pointer:fine) { .menu-item:hover { color:var(--green); transform:translateX(6px); } .nav-link:hover { border-color:var(--green); background-color:rgba(155,197,61,.12); } .btn-primary:hover { box-shadow:0 14px 28px rgba(155,197,61,.32); transform:translateY(-2px); } .btn-ghost:hover { background-color:rgba(255,255,255,.16); } .store-caption:hover { color:var(--green); background:rgba(155,197,61,.12); } }
     .menu-item:after { content:"›"; margin-left:auto; color:var(--green); font-size:22px; line-height:1; }
     .price { color:#fff; white-space:nowrap; }
-    .order-note { min-height:1.3em; margin:18px 0 0; color:var(--berry); font-size:14px; font-weight:800; opacity:0; transform:translateY(6px); transition:opacity 200ms var(--ease-out), transform 200ms var(--ease-out); }
-    .order-note.is-visible { opacity:1; transform:translateY(0); }
+    .order-dialog { width:min(92vw, 420px); max-width:420px; padding:25px; border:0; border-radius:22px; color:var(--ink); background:var(--cream); box-shadow:0 24px 70px rgba(25,6,34,.35); }
+    .order-dialog::backdrop { background:rgba(29,8,38,.7); backdrop-filter:blur(4px); }
+    .order-dialog h3 { margin:0 0 10px; color:var(--purple); font-size:27px; }
+    .order-dialog p { margin:0 0 22px; line-height:1.5; }
+    .dialog-actions { display:flex; flex-wrap:wrap; gap:10px; }
+    .dialog-cancel { border:1px solid var(--line); color:var(--purple); background:#fff; cursor:pointer; }
     .photos { background:var(--cream); }
-    .photo-grid { display:grid; grid-template-columns:1.35fr 1fr; grid-template-rows:150px 150px; gap:12px; margin-top:28px; }
-    .photo-slot { display:grid; place-items:center; min-height:120px; padding:18px; border:1.5px dashed rgba(92,28,114,.42); border-radius:24px; color:var(--berry); background:rgba(247,231,239,.72); text-align:center; font-size:14px; font-weight:900; }
-    .photo-slot:first-child { grid-row:1 / 3; }
+    .product-group { margin-top:30px; }
+    .product-group h3 { margin:0; color:var(--purple); font-size:23px; letter-spacing:-.03em; }
+    .photo-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; margin-top:28px; }
+    .product-group .photo-grid { margin-top:14px; }
+    .product-card { overflow:hidden; margin:0; border-radius:22px; background:#fff; box-shadow:0 10px 25px rgba(50,17,63,.1); }
+    .product-picture { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:cover; }
+    .product-card figcaption { padding:13px 15px 15px; color:var(--purple); font-size:14px; font-weight:800; }
     .store { display:grid; gap:20px; background:#f7e7ef; }
     .store-heading { color:var(--purple); }
     .store-heading h2 { margin-bottom:0; }
@@ -83,7 +92,7 @@
     @keyframes hero-enter { to { opacity:1; transform:translateY(0); } }
     @keyframes float { 0%,100%{transform:translateY(0) rotate(-7deg)} 50%{transform:translateY(-14px) rotate(-3deg)} }
     @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(8px)} }
-    @media (min-width:700px) { .hero, section, footer { padding-left:8vw; padding-right:8vw; } .hero { justify-content:center; } .menu-grid { grid-template-columns:1fr 1fr; } .story { grid-template-columns:1fr 1fr; align-items:center; } }
+    @media (min-width:700px) { .hero, section, footer { padding-left:8vw; padding-right:8vw; } .hero { justify-content:center; } .menu-grid { grid-template-columns:1fr 1fr; } .photo-grid { grid-template-columns:repeat(3, minmax(0,1fr)); } .story { grid-template-columns:1fr 1fr; align-items:center; } }
     @media (prefers-reduced-motion:reduce) { *, *:before, *:after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } .hero-entry, .reveal { opacity:1; transform:none; } .store-photo img { clip-path:inset(0); } }
   </style>
 </head>
@@ -100,15 +109,23 @@
     </section>
     <section class="menu-section" id="cardapio">
       <div class="reveal"><h2>Cardápio da cuia</h2><p class="section-lead">Toque no produto para deixar seu pedido pronto para o WhatsApp.</p></div>
+      <a href="assets/images/cardapio-com-precos.png" target="_blank" rel="noopener" aria-label="Abrir o cardápio com preços em tamanho maior"><img class="menu-art reveal" src="assets/images/cardapio-com-precos.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Cardápio Açaí na Cuia: açaí popular R$ 7, médio R$ 10 e grosso R$ 15; farinha d’água R$ 12, farinha de tapioca R$ 20 e farinha para farofa R$ 12" /></a>
+      <p class="menu-caption">Toque na imagem para ver o cardápio em tamanho maior.</p>
       <div class="menu-grid">
-        <article class="menu-card reveal"><h3>Açaí</h3><button class="menu-item" type="button" data-order="Açaí popular"><span>Açaí popular</span><span class="price">R$ ____</span></button><button class="menu-item" type="button" data-order="Açaí médio"><span>Açaí médio</span><span class="price">R$ ____</span></button><button class="menu-item" type="button" data-order="Açaí grosso"><span>Açaí grosso</span><span class="price">R$ ____</span></button></article>
-        <article class="menu-card reveal"><h3>Farinhas</h3><button class="menu-item" type="button" data-order="Farinha d’água"><span>Farinha d’água</span><span class="price">R$ ____</span></button><button class="menu-item" type="button" data-order="Farinha de tapioca"><span>Farinha de tapioca</span><span class="price">R$ ____</span></button><button class="menu-item" type="button" data-order="Farinha para farofa"><span>Farinha para farofa</span><span class="price">R$ ____</span></button></article>
+        <article class="menu-card reveal"><h3>Açaí</h3><button class="menu-item" type="button" data-order="Açaí popular" data-price-id="acai-popular" data-article="um"><span>Açaí popular</span><span class="price">R$ 7,00</span></button><button class="menu-item" type="button" data-order="Açaí médio" data-price-id="acai-medio" data-article="um"><span>Açaí médio</span><span class="price">R$ 10,00</span></button><button class="menu-item" type="button" data-order="Açaí grosso" data-price-id="acai-grosso" data-article="um"><span>Açaí grosso</span><span class="price">R$ 15,00</span></button></article>
+        <article class="menu-card reveal"><h3>Farinhas</h3><button class="menu-item" type="button" data-order="Farinha d’água" data-price-id="farinha-agua" data-article="uma"><span>Farinha d’água</span><span class="price">R$ 12,00</span></button><button class="menu-item" type="button" data-order="Farinha de tapioca" data-price-id="farinha-tapioca" data-article="uma"><span>Farinha de tapioca</span><span class="price">R$ 20,00</span></button><button class="menu-item" type="button" data-order="Farinha para farofa" data-price-id="farinha-farofa" data-article="uma"><span>Farinha para farofa</span><span class="price">R$ 12,00</span></button></article>
       </div>
-      <p class="order-note" id="order-note" aria-live="polite"></p>
     </section>
     <section class="photos" id="produtos">
-      <div class="reveal"><div class="section-kicker">Produtos reais</div><h2>Em breve, na sua tela.</h2><p class="section-lead">Este espaço está reservado para as fotos reais dos produtos da loja.</p></div>
-      <div class="photo-grid reveal"><div class="photo-slot">Adicionar foto principal do açaí</div><div class="photo-slot">Adicionar foto das farinhas</div><div class="photo-slot">Adicionar outra foto</div></div>
+      <div class="reveal"><div class="section-kicker">Produtos</div><h2>Da nossa terra para você.</h2><p class="section-lead">Conheça a farofa e as três apresentações de farinha, cada uma com sua arte original.</p></div>
+      <div class="product-group reveal"><h3>Farofa</h3><div class="photo-grid">
+        <figure class="product-card"><img class="product-picture" src="assets/images/farofa.jpeg" width="1254" height="1254" loading="lazy" decoding="async" alt="Arte da farofa caseira em pote" /><figcaption>Farofa caseira</figcaption></figure>
+      </div></div>
+      <div class="product-group reveal"><h3>Farinhas</h3><div class="photo-grid">
+        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-1.jpg" width="624" height="624" loading="lazy" decoding="async" alt="Primeira arte: pacote de farinha fina, qualidade e praticidade" /><figcaption>Farinha · produto 1</figcaption></figure>
+        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-2.jpg" width="623" height="624" loading="lazy" decoding="async" alt="Segunda arte: pacote de farinha em grãos, sabor e tradição" /><figcaption>Farinha · produto 2</figcaption></figure>
+        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-3.jpg" width="624" height="623" loading="lazy" decoding="async" alt="Terceira arte: pacote com grãos brancos, frescor e qualidade" /><figcaption>Farinha · produto 3</figcaption></figure>
+      </div></div>
     </section>
     <section class="store" id="loja">
       <div class="store-heading reveal"><div class="section-kicker">Nossa loja</div></div>
@@ -116,24 +133,45 @@
     </section>
     <section class="location" id="localizacao"><div class="reveal"><div class="section-kicker">Visite a loja</div><h2>Chegue na Cuia.</h2><p class="section-lead">Estamos esperando você em Cametá. Salve o endereço e peça sua rota.</p><div class="address">📍 R. Adilson Machado, 2482<br>Cametá, PA · 68400-000</div><a class="btn btn-primary" href="https://maps.app.goo.gl/9LPhk8yuM2tqJ5Af7" target="_blank" rel="noopener">Abrir no Google Maps</a></div></section>
   </main>
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title" aria-describedby="order-dialog-message"><h3 id="order-dialog-title">Confirmar pedido</h3><p id="order-dialog-message"></p><div class="dialog-actions"><button class="btn dialog-cancel" type="button" id="order-cancel">Continuar no cardápio</button><a class="btn btn-primary" id="order-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Ir para o WhatsApp</a></div></dialog>
   <footer>Açaí na Cuia · Pedidos pelo WhatsApp</footer>
   <script>
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }), { threshold: .16 });
     document.querySelectorAll('.reveal').forEach((el, index) => { el.style.transitionDelay = `${Math.min(index * 70, 300)}ms`; observer.observe(el); });
-    const WHATSAPP_NUMBER = '';
-    const orderNote = document.querySelector('#order-note');
-    document.querySelectorAll('[data-order]').forEach((button) => button.addEventListener('click', () => {
-      const product = button.dataset.order;
-      const message = `Olá! Gostaria de pedir: ${product}.`;
-      if (WHATSAPP_NUMBER) window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
-      else {
-        document.querySelectorAll('[data-order]').forEach((item) => item.classList.remove('is-selected'));
-        button.classList.add('is-selected');
-        orderNote.classList.remove('is-visible');
-        orderNote.textContent = `Pedido selecionado: ${product}. O WhatsApp do proprietário será conectado aqui.`;
-        requestAnimationFrame(() => orderNote.classList.add('is-visible'));
+    const menuItems = [...document.querySelectorAll('[data-order]')];
+    const dialog = document.querySelector('#order-dialog');
+    const dialogMessage = document.querySelector('#order-dialog-message');
+    const whatsappLink = document.querySelector('#order-whatsapp');
+    const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    let whatsappNumber = '5591983084251';
+    const prices = { 'acai-popular':700, 'acai-medio':1000, 'acai-grosso':1500, 'farinha-agua':1200, 'farinha-tapioca':2000, 'farinha-farofa':1200 };
+    function displayPrices() {
+      menuItems.forEach((button) => {
+        const cents = prices[button.dataset.priceId];
+        button.querySelector('.price').textContent = Number.isInteger(cents) ? currency.format(cents / 100) : 'Consulte o preço';
+      });
+    }
+    fetch('cardapio.json', { cache: 'no-store' }).then((response) => {
+      if (!response.ok) throw new Error('Cardápio indisponível');
+      return response.json();
+    }).then((data) => {
+      if (/^55\d{10,11}$/.test(data.whatsapp)) whatsappNumber = data.whatsapp;
+      for (const id of Object.keys(prices)) {
+        if (data.precos && (data.precos[id] === null || Number.isInteger(data.precos[id]))) prices[id] = data.precos[id];
       }
+      displayPrices();
+    }).catch(() => { /* Os preços do HTML continuam disponíveis. */ });
+    menuItems.forEach((button) => button.addEventListener('click', () => {
+      const product = button.dataset.order;
+      const cents = prices[button.dataset.priceId];
+      const price = Number.isInteger(cents) ? currency.format(cents / 100) : 'preço a consultar';
+      dialogMessage.textContent = `${product} — ${price}. Deseja continuar para o WhatsApp?`;
+      const message = `Olá! Gostaria de pedir ${button.dataset.article} ${product.toLocaleLowerCase('pt-BR')}${Number.isInteger(cents) ? ` por ${price}` : ''}.`;
+      whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      dialog.showModal();
     }));
+    document.querySelector('#order-cancel').addEventListener('click', () => dialog.close());
+    whatsappLink.addEventListener('click', () => dialog.close());
   </script>
 </body>
 </html>
