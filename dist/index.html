@@ -109,11 +109,11 @@
     </section>
     <section class="menu-section" id="cardapio">
       <div class="reveal"><h2>Cardápio da cuia</h2><p class="section-lead">Toque no produto para deixar seu pedido pronto para o WhatsApp.</p></div>
-      <a href="assets/images/cardapio-com-precos.png" target="_blank" rel="noopener" aria-label="Abrir o cardápio com preços em tamanho maior"><img class="menu-art reveal" src="assets/images/cardapio-com-precos.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Cardápio Açaí na Cuia: açaí popular R$ 7, médio R$ 10 e grosso R$ 15; farinha d’água R$ 12, farinha de tapioca R$ 20 e farinha para farofa R$ 12" /></a>
+      <a href="assets/images/cardapio-com-precos.png" target="_blank" rel="noopener" aria-label="Abrir o cardápio com preços em tamanho maior"><img class="menu-art reveal" src="assets/images/cardapio-com-precos.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Cardápio Açaí na Cuia: açaí popular R$ 7, médio R$ 10 e grosso R$ 15; farinha d’água R$ 14, farinha de tapioca R$ 20 e farinha para farofa R$ 12" /></a>
       <p class="menu-caption">Toque na imagem para ver o cardápio em tamanho maior.</p>
       <div class="menu-grid">
         <article class="menu-card reveal"><h3>Açaí</h3><button class="menu-item" type="button" data-order="Açaí popular" data-price-id="acai-popular" data-article="um"><span>Açaí popular</span><span class="price">R$ 7,00</span></button><button class="menu-item" type="button" data-order="Açaí médio" data-price-id="acai-medio" data-article="um"><span>Açaí médio</span><span class="price">R$ 10,00</span></button><button class="menu-item" type="button" data-order="Açaí grosso" data-price-id="acai-grosso" data-article="um"><span>Açaí grosso</span><span class="price">R$ 15,00</span></button></article>
-        <article class="menu-card reveal"><h3>Farinhas</h3><button class="menu-item" type="button" data-order="Farinha d’água" data-price-id="farinha-agua" data-article="uma"><span>Farinha d’água</span><span class="price">R$ 12,00</span></button><button class="menu-item" type="button" data-order="Farinha de tapioca" data-price-id="farinha-tapioca" data-article="uma"><span>Farinha de tapioca</span><span class="price">R$ 20,00</span></button><button class="menu-item" type="button" data-order="Farinha para farofa" data-price-id="farinha-farofa" data-article="uma"><span>Farinha para farofa</span><span class="price">R$ 12,00</span></button></article>
+        <article class="menu-card reveal"><h3>Farinhas</h3><button class="menu-item" type="button" data-order="Farinha d’água" data-price-id="farinha-agua" data-article="uma"><span>Farinha d’água</span><span class="price">R$ 14,00</span></button><button class="menu-item" type="button" data-order="Farinha de tapioca" data-price-id="farinha-tapioca" data-article="uma"><span>Farinha de tapioca</span><span class="price">R$ 20,00</span></button><button class="menu-item" type="button" data-order="Farinha para farofa" data-price-id="farinha-farofa" data-article="uma"><span>Farinha para farofa</span><span class="price">R$ 12,00</span></button></article>
       </div>
     </section>
     <section class="photos" id="produtos">
@@ -144,7 +144,7 @@
     const whatsappLink = document.querySelector('#order-whatsapp');
     const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
     let whatsappNumber = '5591983084251';
-    const prices = { 'acai-popular':700, 'acai-medio':1000, 'acai-grosso':1500, 'farinha-agua':1200, 'farinha-tapioca':2000, 'farinha-farofa':1200 };
+    const prices = { 'acai-popular':700, 'acai-medio':1000, 'acai-grosso':1500, 'farinha-agua':1400, 'farinha-tapioca':2000, 'farinha-farofa':1200 };
     function displayPrices() {
       menuItems.forEach((button) => {
         const cents = prices[button.dataset.priceId];
