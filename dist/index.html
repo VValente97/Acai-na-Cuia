@@ -4,27 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#32113f" />
-  <meta name="description" content="Açaí na Cuia — açaí e farinhas em Cametá. Peça pelo WhatsApp." />
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Açaí na Cuia | Cametá</title>
+  <meta name="description" content="Açaí na Cuia em Cametá, PA. Conheça nosso cardápio de açaí, farinhas e farofa, veja o endereço da loja e faça seu pedido pelo WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://acainacuia.pages.dev/" />
+  <title>Açaí na Cuia em Cametá, PA | Cardápio, endereço e pedidos</title>
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FoodEstablishment","name":"Açaí na Cuia","address":{"@type":"PostalAddress","streetAddress":"R. Adilson Machado, 2482","addressLocality":"Cametá","addressRegion":"PA","postalCode":"68400-000","addressCountry":"BR"},"hasMap":"https://maps.app.goo.gl/9LPhk8yuM2tqJ5Af7"}
+    {"@context":"https://schema.org","@type":"FoodEstablishment","name":"Açaí na Cuia","description":"Loja de açaí, farinhas e farofa em Cametá, Pará.","address":{"@type":"PostalAddress","streetAddress":"Padre Antônio Franco, 2482","addressLocality":"Cametá","addressRegion":"PA","postalCode":"68400-000","addressCountry":"BR"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Padre+Ant%C3%B4nio+Franco+2482%2C+Camet%C3%A1+PA"}
   </script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2332113f'/%3E%3Cellipse cx='32' cy='37' rx='19' ry='10' fill='%23a5cf39'/%3E%3Cellipse cx='32' cy='32' rx='17' ry='13' fill='%235a1a72'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="assets/images/logo-acai-na-cuia.png" />
   <style>
     :root { --purple:#32113f; --berry:#5c1c72; --green:#9bc53d; --cream:#fff7e9; --ink:#26142c; --muted:#775d78; --line:rgba(50,17,63,.14); --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1); }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; color:var(--ink); background:var(--cream); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; overflow-x:hidden; }
     a { color:inherit; text-decoration:none; }
-    .topbar { position:fixed; inset:0 0 auto; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:16px 20px; color:#fff; background:linear-gradient(180deg, rgba(50,17,63,.92), rgba(50,17,63,.18)); backdrop-filter:blur(10px); }
-    .brand { font-weight:900; letter-spacing:-.04em; font-size:20px; }
-    .brand span { color:var(--green); }
-    .nav-link { border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:9px 13px; font-size:13px; font-weight:800; transition:transform 160ms var(--ease-out), border-color 160ms ease, background-color 160ms ease; }
+    .topbar { position:fixed; inset:0 0 auto; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:6px 20px; color:#fff; background:linear-gradient(180deg, rgba(50,17,63,.96), rgba(50,17,63,.55)); backdrop-filter:blur(10px); transition:padding 220ms var(--ease-out), background-color 220ms ease, box-shadow 220ms ease; }
+    .brand { display:inline-flex; align-items:center; flex:none; }
+    .brand-logo { display:block; width:clamp(84px, 20vw, 108px); height:auto; filter:drop-shadow(0 2px 5px rgba(0,0,0,.18)); transition:width 220ms var(--ease-out); }
+    .topbar.is-compact { padding-top:2px; padding-bottom:2px; background:rgba(50,17,63,.96); box-shadow:0 6px 18px rgba(22,5,30,.2); }
+    .topbar.is-compact .brand-logo { width:clamp(64px, 15vw, 80px); }
+    .nav-link { border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:9px 13px; font-size:13px; font-weight:800; transition:transform 160ms var(--ease-out), border-color 160ms ease, background-color 160ms ease, padding 220ms var(--ease-out), font-size 220ms var(--ease-out); }
+    .topbar.is-compact .nav-link { padding:7px 11px; font-size:12px; }
     .nav-link:active { transform:scale(.97); }
     .hero { min-height:100svh; padding:112px 20px 40px; position:relative; isolation:isolate; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; background:radial-gradient(circle at 80% 12%, rgba(155,197,61,.32), transparent 28%), linear-gradient(145deg, #32113f 5%, #5c1c72 60%, #9b679f 100%); }
     .hero:before { content:""; position:absolute; width:130vw; height:52vh; left:-30vw; top:32vh; z-index:-1; opacity:.18; background:repeating-linear-gradient(135deg, transparent 0 26px, #fff 27px 29px, transparent 30px 58px); transform:rotate(-10deg); }
     .hero-orb { position:absolute; width:280px; height:280px; right:-110px; top:105px; border-radius:50%; background:rgba(155,197,61,.22); filter:blur(3px); animation:float 5s var(--ease-in-out) infinite; }
+    .hero-logo { display:block; width:min(52vw, 220px); height:auto; margin-bottom:14px; filter:drop-shadow(0 12px 22px rgba(16,4,23,.26)); }
     .hero-entry { opacity:0; transform:translateY(16px); animation:hero-enter 620ms var(--ease-out) forwards; }
     .hero-entry-delay-1 { animation-delay:60ms; }
     .hero-entry-delay-2 { animation-delay:120ms; }
@@ -97,23 +102,23 @@
   </style>
 </head>
 <body>
-  <header class="topbar"><a class="brand" href="#inicio">Açaí <span>na Cuia</span></a><a class="nav-link" href="#cardapio">Ver cardápio</a></header>
+  <header class="topbar"><a class="brand" href="#inicio" aria-label="Açaí na Cuia, voltar ao início"><img class="brand-logo" src="assets/images/logo-acai-na-cuia.png" width="108" height="75" alt="Açaí na Cuia" /></a><a class="nav-link" href="#cardapio">Ver cardápio</a></header>
   <main>
     <section class="hero" id="inicio">
       <div class="hero-orb" aria-hidden="true"></div>
-      <div class="eyebrow hero-entry"><i></i> Açaí na Cuia</div>
-      <h1 class="hero-entry hero-entry-delay-1">Seu açaí na melhor qualidade.</h1>
-      <p class="hero-copy hero-entry hero-entry-delay-2">Açaí confiável, tradicional e preparado com o sabor que atravessa gerações.</p>
+      <img class="hero-logo hero-entry" src="assets/images/logo-acai-na-cuia.png" width="220" height="154" alt="" />
+      <h1 class="hero-entry hero-entry-delay-1">Açaí na Cuia em Cametá.</h1>
+      <p class="hero-copy hero-entry hero-entry-delay-2">Seu açaí na melhor qualidade. Açaí tradicional, farinhas e farofa com o sabor que atravessa gerações.</p>
       <div class="cta-row hero-entry hero-entry-delay-3"><a class="btn btn-primary" href="#cardapio">Conhecer o menu</a><a class="btn btn-ghost" href="#localizacao">Encontrar a loja</a></div>
       <div class="scroll-cue">deslize <span></span></div>
     </section>
     <section class="menu-section" id="cardapio">
-      <div class="reveal"><h2>Cardápio da cuia</h2><p class="section-lead">Toque no produto para deixar seu pedido pronto para o WhatsApp.</p></div>
-      <a href="assets/images/cardapio-com-precos.png" target="_blank" rel="noopener" aria-label="Abrir o cardápio com preços em tamanho maior"><img class="menu-art reveal" src="assets/images/cardapio-com-precos.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Cardápio Açaí na Cuia: açaí popular R$ 7, médio R$ 10 e grosso R$ 15; farinha d’água R$ 14, farinha de tapioca R$ 20 e farinha para farofa R$ 12" /></a>
+      <div class="reveal"><h2>Cardápio do Açaí na Cuia</h2><p class="section-lead">Veja nossos produtos em Cametá e toque para deixar seu pedido pronto para o WhatsApp.</p></div>
+      <a href="assets/images/cardapio-com-precos.png" target="_blank" rel="noopener" aria-label="Abrir o cardápio com preços em tamanho maior"><img class="menu-art reveal" src="assets/images/cardapio-com-precos.png" width="1122" height="1402" loading="lazy" decoding="async" alt="Cardápio Açaí na Cuia: açaí popular R$ 7, médio R$ 10 e grosso R$ 15; farinha d’água R$ 16, farinha de tapioca R$ 20 e farinha para farofa com preço a consultar" /></a>
       <p class="menu-caption">Toque na imagem para ver o cardápio em tamanho maior.</p>
       <div class="menu-grid">
         <article class="menu-card reveal"><h3>Açaí</h3><button class="menu-item" type="button" data-order="Açaí popular" data-price-id="acai-popular" data-article="um"><span>Açaí popular</span><span class="price">R$ 7,00</span></button><button class="menu-item" type="button" data-order="Açaí médio" data-price-id="acai-medio" data-article="um"><span>Açaí médio</span><span class="price">R$ 10,00</span></button><button class="menu-item" type="button" data-order="Açaí grosso" data-price-id="acai-grosso" data-article="um"><span>Açaí grosso</span><span class="price">R$ 15,00</span></button></article>
-        <article class="menu-card reveal"><h3>Farinhas</h3><button class="menu-item" type="button" data-order="Farinha d’água" data-price-id="farinha-agua" data-article="uma"><span>Farinha d’água</span><span class="price">R$ 14,00</span></button><button class="menu-item" type="button" data-order="Farinha de tapioca" data-price-id="farinha-tapioca" data-article="uma"><span>Farinha de tapioca</span><span class="price">R$ 20,00</span></button><button class="menu-item" type="button" data-order="Farinha para farofa" data-price-id="farinha-farofa" data-article="uma"><span>Farinha para farofa</span><span class="price">R$ 12,00</span></button></article>
+        <article class="menu-card reveal"><h3>Farinhas</h3><button class="menu-item" type="button" data-order="Farinha d’água" data-price-id="farinha-agua" data-article="uma"><span>Farinha d’água</span><span class="price">R$ 16,00</span></button><button class="menu-item" type="button" data-order="Farinha de tapioca" data-price-id="farinha-tapioca" data-article="uma"><span>Farinha de tapioca</span><span class="price">R$ 20,00</span></button><button class="menu-item" type="button" data-order="Farinha para farofa" data-price-id="farinha-farofa" data-article="uma"><span>Farinha para farofa</span><span class="price">Consulte o preço</span></button></article>
       </div>
     </section>
     <section class="photos" id="produtos">
@@ -122,20 +127,24 @@
         <figure class="product-card"><img class="product-picture" src="assets/images/farofa.jpeg" width="1254" height="1254" loading="lazy" decoding="async" alt="Arte da farofa caseira em pote" /><figcaption>Farofa caseira</figcaption></figure>
       </div></div>
       <div class="product-group reveal"><h3>Farinhas</h3><div class="photo-grid">
-        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-1.jpg" width="624" height="624" loading="lazy" decoding="async" alt="Primeira arte: pacote de farinha fina, qualidade e praticidade" /><figcaption>Farinha · produto 1</figcaption></figure>
-        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-2.jpg" width="623" height="624" loading="lazy" decoding="async" alt="Segunda arte: pacote de farinha em grãos, sabor e tradição" /><figcaption>Farinha · produto 2</figcaption></figure>
-        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-3.jpg" width="624" height="623" loading="lazy" decoding="async" alt="Terceira arte: pacote com grãos brancos, frescor e qualidade" /><figcaption>Farinha · produto 3</figcaption></figure>
+        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-1.jpg" width="624" height="624" loading="lazy" decoding="async" alt="Farinha para farofa" /><figcaption>Farinha para farofa</figcaption></figure>
+        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-2.jpg" width="623" height="624" loading="lazy" decoding="async" alt="Farinha d’água" /><figcaption>Farinha d’água</figcaption></figure>
+        <figure class="product-card"><img class="product-picture" src="assets/images/farinha-produto-3.jpg" width="624" height="623" loading="lazy" decoding="async" alt="Farinha de tapioca" /><figcaption>Farinha de tapioca</figcaption></figure>
       </div></div>
     </section>
     <section class="store" id="loja">
       <div class="store-heading reveal"><div class="section-kicker">Nossa loja</div></div>
       <div class="store-photo reveal"><img src="assets/images/store-front.jpg" width="918" height="771" loading="lazy" decoding="async" alt="Fachada real da loja Açaí na Cuia" /><a class="store-caption" href="#localizacao" aria-label="Ir para a localização da loja">Nossa loja em Cametá · ver localização ↓</a></div>
     </section>
-    <section class="location" id="localizacao"><div class="reveal"><div class="section-kicker">Visite a loja</div><h2>Chegue na Cuia.</h2><p class="section-lead">Estamos esperando você em Cametá. Salve o endereço e peça sua rota.</p><div class="address">📍 R. Adilson Machado, 2482<br>Cametá, PA · 68400-000</div><a class="btn btn-primary" href="https://maps.app.goo.gl/9LPhk8yuM2tqJ5Af7" target="_blank" rel="noopener">Abrir no Google Maps</a></div></section>
+    <section class="location" id="localizacao"><div class="reveal"><div class="section-kicker">Visite a loja</div><h2>Chegue na Cuia.</h2><p class="section-lead">Estamos esperando você em Cametá. Salve o endereço e peça sua rota.</p><div class="address">📍 Padre Antônio Franco, 2482<br>Cametá, PA · 68400-000</div><a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Padre+Ant%C3%B4nio+Franco+2482%2C+Camet%C3%A1+PA" target="_blank" rel="noopener">Abrir no Google Maps</a></div></section>
   </main>
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title" aria-describedby="order-dialog-message"><h3 id="order-dialog-title">Confirmar pedido</h3><p id="order-dialog-message"></p><div class="dialog-actions"><button class="btn dialog-cancel" type="button" id="order-cancel">Continuar no cardápio</button><a class="btn btn-primary" id="order-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Ir para o WhatsApp</a></div></dialog>
   <footer>Açaí na Cuia · Pedidos pelo WhatsApp</footer>
   <script>
+    const topbar = document.querySelector('.topbar');
+    const updateTopbar = () => topbar.classList.toggle('is-compact', window.scrollY > 48);
+    window.addEventListener('scroll', updateTopbar, { passive:true });
+    updateTopbar();
     const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } }), { threshold: .16 });
     document.querySelectorAll('.reveal').forEach((el, index) => { el.style.transitionDelay = `${Math.min(index * 70, 300)}ms`; observer.observe(el); });
     const menuItems = [...document.querySelectorAll('[data-order]')];
@@ -144,7 +153,7 @@
     const whatsappLink = document.querySelector('#order-whatsapp');
     const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
     let whatsappNumber = '5591983084251';
-    const prices = { 'acai-popular':700, 'acai-medio':1000, 'acai-grosso':1500, 'farinha-agua':1400, 'farinha-tapioca':2000, 'farinha-farofa':1200 };
+    const prices = { 'acai-popular':700, 'acai-medio':1000, 'acai-grosso':1500, 'farinha-agua':1600, 'farinha-tapioca':2000, 'farinha-farofa':null };
     function displayPrices() {
       menuItems.forEach((button) => {
         const cents = prices[button.dataset.priceId];
